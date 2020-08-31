@@ -65,7 +65,7 @@ Things you may want to cover:
 
 - belongs_to :user
 - has_many :messages
-- has_one ：information
+- has_one ：informations
 
 
 ## messages テーブル
