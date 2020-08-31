@@ -65,7 +65,7 @@ Things you may want to cover:
 
 - belongs_to :user
 - has_many :messages
-- has_one :purchase
+- has_one ：information
 
 
 ## messages テーブル
@@ -84,14 +84,15 @@ Things you may want to cover:
 
 ## addresses テーブル
 
-| Column          | Type    | Options     |
-| --------------- | ------- | ----------- |
-| postal_code     | string  | null: false |
-| prefecture_id   | integer | null: false |
-| city_name       | string  | null: false |
-| address         | string  | null: false |
-| buildding_name  | string  |             |
-| phone_number    | string  | null: false |
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| postal_code     | string     | null: false                    |
+| prefecture_id   | integer    | null: false                    |
+| city_name       | string     | null: false                    |
+| address         | string     | null: false                    |
+| buildding_name  | string     |                                |
+| phone_number    | string     | null: false                    |
+| information     | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -99,13 +100,13 @@ Things you may want to cover:
 
 ## informations テーブル
 
-| Column          | Type   | Options     |
-| --------------- | ------ | ----------- |
-| user_id         | string | null: false |
-| item_id         | string | null: false |
+| Column          | Type   | Options                        |
+| --------------- | ------ | ------------------------------ |
+| user_id         | string | null: false, foreign_key: true |
+| item_id         | string | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
 - belongs_to :item
-- has_one :addresse
+- has_one :address
