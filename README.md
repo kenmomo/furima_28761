@@ -28,35 +28,41 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| name     | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
-| birthday | string | null: false |
+| Column                  | Type   | Options     |
+| ----------------------- | ------ | ----------- |
+| nickname                | string | null: false |
+| last_name               | string | null: false |
+| first_name              | string | null: false |
+| last_name_furigana      | string | null: false |
+| first_name_furigana     | string | null: false |
+| email                   | string | null: false |
+| password                | string | null: false |
+| birthday                | date   | null: false |
 
 ### Association
 
 - has_many :items
 - has_many :messages
-- has_many :purchase
 
 ## items テーブル
 
-| Column      | Type    | Options     |
-| ----------- | ------- | ----------- |
-| name        | string  | null: false |
-| image       | text    | null: false |
-| content     | string  | null: false |
-| item_detail | string  | null: false |
-| price       | integer | null: false |
-| delivery    | string  | null: false |
+| Column          | Type    | Options     |
+| --------------- | ------- | ----------- |
+| name            | string  | null: false |
+| image           | text    | null: false |
+| content         | text    | null: false |
+| category_id     | integer | null: false |
+| condition_id    | integer | null: false |
+| price           | integer | null: false |
+| delivery_burden | integer | null: false |
+| delivery_area   | integer | null: false |
+| delivery_days   | integer | null: false |
+
 
 ### Association
 
-- belongs_to :users
+- belongs_to :user
 - has_many :messages
-- has_one :purchase
 
 
 ## messages テーブル
@@ -69,28 +75,27 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to :users
+- belongs_to :user
 - has_many :items
 
 
 ## addresses テーブル
 
-| Column          | Type   | Options     |
-| --------------- | ------ | ----------- |
-| name            | string | null: false |
-| postal_code     | string | null: false |
-| prefecture_id   | string | null: false |
-| city_name       | string | null: false |
-| address         | string | null: false |
-| buildding_name  | string | null: false |
-| phone_number    | string | null: false |
+| Column          | Type    | Options     |
+| --------------- | ------- | ----------- |
+| name            | string  | null: false |
+| postal_code     | string  | null: false |
+| prefecture_id   | integer | null: false |
+| city_name       | string  | null: false |
+| address         | string  | null: false |
+| buildding_name  | string  |             |
+| phone_number    | string  | null: false |
 
 ### Association
 
-- belongs_to :user
-- belongs_to :items
+- belongs_to :information
 
-## information テーブル
+## informations テーブル
 
 | Column          | Type   | Options     |
 | --------------- | ------ | ----------- |
@@ -100,4 +105,5 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- belongs_to :items
+- belongs_to :item
+- has_one :addresse
