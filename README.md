@@ -33,26 +33,28 @@ Things you may want to cover:
 | name     | string | null: false |
 | email    | string | null: false |
 | password | string | null: false |
+| birthday | string | null: false |
 
 ### Association
 
-- has_many :item
+- has_many :items
 - has_many :messages
 - has_many :purchase
 
-## item テーブル
+## items テーブル
 
-| Column  | Type   | Options     |
-| ------- | ------ | ----------- |
-| name    | string | null: false |
-| image   | text   | null: false |
-| content | string | null: false |
-| price   | string | null: false |
-| delivery| string | null: false |
+| Column      | Type    | Options     |
+| ----------- | ------- | ----------- |
+| name        | string  | null: false |
+| image       | text    | null: false |
+| content     | string  | null: false |
+| item_detail | string  | null: false |
+| price       | integer | null: false |
+| delivery    | string  | null: false |
 
 ### Association
 
-- belongs_to :user
+- belongs_to :users
 - has_many :messages
 - has_one :purchase
 
@@ -67,19 +69,17 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to :user
-- has_many :item
+- belongs_to :users
+- has_many :items
 
 
-## purchase テーブル
+## addresses テーブル
 
 | Column          | Type   | Options     |
 | --------------- | ------ | ----------- |
 | name            | string | null: false |
-| credit_number   | string | null: false |
-| credit_deadline | string | null: false |
 | postal_code     | string | null: false |
-| prefecture      | string | null: false |
+| prefecture_id   | string | null: false |
 | city_name       | string | null: false |
 | address         | string | null: false |
 | buildding_name  | string | null: false |
@@ -88,4 +88,16 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- belongs_to :item
+- belongs_to :items
+
+## information テーブル
+
+| Column          | Type   | Options     |
+| --------------- | ------ | ----------- |
+| user_id         | string | null: false |
+| item_id         | string | null: false |
+
+### Association
+
+- belongs_to :user
+- belongs_to :items
