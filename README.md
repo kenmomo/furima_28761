@@ -43,26 +43,29 @@ Things you may want to cover:
 
 - has_many :items
 - has_many :messages
+- has_many :purchase
 
 ## items テーブル
 
-| Column          | Type    | Options     |
-| --------------- | ------- | ----------- |
-| name            | string  | null: false |
-| image           | text    | null: false |
-| content         | text    | null: false |
-| category_id     | integer | null: false |
-| condition_id    | integer | null: false |
-| price           | integer | null: false |
-| delivery_burden | integer | null: false |
-| delivery_area   | integer | null: false |
-| delivery_days   | integer | null: false |
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| name            | string     | null: false                    |
+| image           | text       | null: false                    |
+| content         | text       | null: false                    |
+| category_id     | integer    | null: false                    |
+| condition_id    | integer    | null: false                    |
+| price           | integer    | null: false                    |
+| delivery_burden | integer    | null: false                    |
+| delivery_area   | integer    | null: false                    |
+| delivery_days   | integer    | null: false                    |
+| user            | references | null: false, foreign_key: true |
 
 
 ### Association
 
 - belongs_to :user
 - has_many :messages
+- has_one :purchase
 
 
 ## messages テーブル
@@ -83,7 +86,6 @@ Things you may want to cover:
 
 | Column          | Type    | Options     |
 | --------------- | ------- | ----------- |
-| name            | string  | null: false |
 | postal_code     | string  | null: false |
 | prefecture_id   | integer | null: false |
 | city_name       | string  | null: false |
