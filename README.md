@@ -57,7 +57,7 @@ Things you may want to cover:
 | delivery_burden_id | integer    | null: false                    |
 | delivery_area_id   | integer    | null: false                    |
 | delivery_days_id   | integer    | null: false                    |
-| user               | integer    | null: false, foreign_key: true |
+| user_id            | integer    | null: false, foreign_key: true |
 
 
 ### Association
@@ -81,7 +81,7 @@ Things you may want to cover:
 | address         | string     | null: false                    |
 | buildding_name  | string     |                                |
 | phone_number    | string     | null: false                    |
-| information     | integer    | null: false, foreign_key: true |
+| information_id  | integer    | null: false, foreign_key: true |
 
 ### Association
 
