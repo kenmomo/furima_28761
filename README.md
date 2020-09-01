@@ -57,7 +57,7 @@ Things you may want to cover:
 | delivery_burden_id | integer    | null: false                    |
 | delivery_area_id   | integer    | null: false                    |
 | delivery_days_id   | integer    | null: false                    |
-| user               | references | null: false, foreign_key: true |
+| user               | integer    | null: false, foreign_key: true |
 
 
 ### Association
@@ -81,7 +81,7 @@ Things you may want to cover:
 | address         | string     | null: false                    |
 | buildding_name  | string     |                                |
 | phone_number    | string     | null: false                    |
-| information     | references | null: false, foreign_key: true |
+| information     | integer    | null: false, foreign_key: true |
 
 ### Association
 
@@ -90,10 +90,10 @@ Things you may want to cover:
 
 ## informations テーブル
 
-| Column          | Type   | Options                        |
-| --------------- | ------ | ------------------------------ |
-| user_id         | string | null: false, foreign_key: true |
-| item_id         | string | null: false, foreign_key: true |
+| Column          | Type    | Options                        |
+| --------------- | ------- | ------------------------------ |
+| user_id         | integer | null: false, foreign_key: true |
+| item_id         | integer | null: false, foreign_key: true |
 
 ### Association
 
