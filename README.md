@@ -42,44 +42,33 @@ Things you may want to cover:
 ### Association
 
 - has_many :items
-- has_many :messages
-- has_many :purchase
+- has_many :informations
 
 ## items テーブル
 
-| Column          | Type       | Options                        |
-| --------------- | ---------- | ------------------------------ |
-| name            | string     | null: false                    |
-| image           | text       | null: false                    |
-| content         | text       | null: false                    |
-| category_id     | integer    | null: false                    |
-| condition_id    | integer    | null: false                    |
-| price           | integer    | null: false                    |
-| delivery_burden | integer    | null: false                    |
-| delivery_area   | integer    | null: false                    |
-| delivery_days   | integer    | null: false                    |
-| user            | references | null: false, foreign_key: true |
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| name               | string     | null: false                    |
+| image              | text       | null: false                    |
+| content            | text       | null: false                    |
+| category_id        | integer    | null: false                    |
+| condition_id       | integer    | null: false                    |
+| price              | integer    | null: false                    |
+| delivery_burden_id | integer    | null: false                    |
+| delivery_area_id   | integer    | null: false                    |
+| delivery_days_id   | integer    | null: false                    |
+| user               | references | null: false, foreign_key: true |
 
 
 ### Association
 
 - belongs_to :user
-- has_many :messages
 - has_one ：information
-
-
-## messages テーブル
-
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| content | string     |                                |
-| user    | references | null: false, foreign_key: true |
-| item    | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- has_many :items
+- belongs_to_active_hash :category
+- belongs_to_active_hash :condition
+- belongs_to_active_hash :delivery_burden
+- belongs_to_active_hash :delivery_area
+- belongs_to_active_hash :delivery_days
 
 
 ## addresses テーブル
@@ -97,6 +86,7 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :information
+- belongs_to_active_hash :prefecture
 
 ## informations テーブル
 
