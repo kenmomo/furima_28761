@@ -36,7 +36,7 @@ Things you may want to cover:
 | last_name_furigana      | string | null: false |
 | first_name_furigana     | string | null: false |
 | email                   | string | null: false |
-| password                | string | null: false |
+| encrypted_password      | string | null: false |
 | birthday                | date   | null: false |
 
 ### Association
