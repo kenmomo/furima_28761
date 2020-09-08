@@ -80,6 +80,36 @@ describe User do
         @user.valid?
         expect(@user.errors.full_messages).to include("Birthday can't be blank")
       end
+      it 'emailに@が含まれないと登録できない' do
+        @user.email = 'momomomomomomo'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Email is invalid")
+      end
+      it 'passwordに英数字混合でない場合登録できない' do
+        @user.password = 'あいうえお'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password is invalid")
+      end
+      it 'ユーザー本名の名字が全角（漢字・ひらがな・カタカナ）で入力されていないと登録できない' do
+        @user.first_name = 'abe'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("First name is invalid")
+      end
+      it 'ユーザー本名の名前が全角（漢字・ひらがな・カタカナ）で入力されていないと登録できない' do
+        @user.last_name = 'taro'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Last name is invalid")
+      end
+      it 'ユーザー本名フリガナの名字が全角（カタカナ）で入力されていないと登録できない' do
+        @user.first_name_furigana = 'abe'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("First name furigana is invalid")
+      end
+      it 'ユーザー本名フリガナの名前が全角（カタカナ）で入力されていないと登録できない' do
+        @user.last_name_furigana = 'taro'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Last name furigana is invalid")
+      end
     end
   end
 end
