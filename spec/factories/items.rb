@@ -8,12 +8,11 @@ FactoryBot.define do
 
     item_name               { 'aaaa' }
     content                 { 'aaaaaaaaaaaa' }
-    category_id              { '4' }
-    condition_id  { '3' }
-    price             { '2000' }
-    delivery_burden_id            { '3' }
+    category_id { '4' }
+    condition_id { '3' }
+    price { '2000' }
+    delivery_burden_id { '3' }
     delivery_area_id    { '5' }
     delivery_days_id    { '4' }
-    
   end
 end
