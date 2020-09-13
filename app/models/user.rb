@@ -28,4 +28,6 @@ class User < ApplicationRecord
   validates :last_name_furigana, format: { with: /\A[ァ-ヶー－]+\z/ }
 
   validates :first_name_furigana, format: { with: /\A[ァ-ヶー－]+\z/ }
+
+  has_many :items
 end
