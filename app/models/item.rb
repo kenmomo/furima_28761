@@ -48,4 +48,6 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   validates :price, format: { with: /\A[0-9]+\z/ }
+
+  has_one :information
 end
