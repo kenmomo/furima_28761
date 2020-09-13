@@ -39,7 +39,6 @@ class Item < ApplicationRecord
     validates :delivery_burden_id
     validates :delivery_area_id
     validates :delivery_days_id
-    # validates :user_id
   end
 
   validates :price, numericality: { only_integer: true }
