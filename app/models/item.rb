@@ -40,12 +40,14 @@ class Item < ApplicationRecord
         validates :delivery_burden_id 
         validates :delivery_area_id 
         validates :delivery_days_id
-        validates :user_id
+        # validates :user_id
       end
 
       validates :price, numericality: { only_integer: true}
-      validates :price, numericality: { reater_than_or_equal_to:300}
+      validates :price, numericality: { greater_than_or_equal_to:300}
       validates :price, numericality: { less_than_or_equal_to:9999999}
 
       has_one_attached :image
+
+      validates :price, format: { with: /\A[0-9]+\z/ }
 end
