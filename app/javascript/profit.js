@@ -6,12 +6,12 @@ const addProfit = document.getElementById("profit")
 
 inputNumber.addEventListener('change', function(){
 
-  var price_tax = inputNumber.value;
-  var num = price_tax * 0.1
+  let price_tax = inputNumber.value;
+  let num = price_tax * 0.1
   addTaxprice.innerHTML = num
 
-  var price_profit = inputNumber.value;
-  var num2 = price_profit * 0.9
+  let price_profit = inputNumber.value;
+  let num2 = price_profit * 0.9
   addProfit.innerHTML = num2
 })
 })
