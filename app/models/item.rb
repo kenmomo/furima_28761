@@ -46,4 +46,6 @@ class Item < ApplicationRecord
       validates :price, numericality: { only_integer: true}
       validates :price, numericality: { reater_than_or_equal_to:300}
       validates :price, numericality: { less_than_or_equal_to:9999999}
+
+      has_one_attached :image
 end
