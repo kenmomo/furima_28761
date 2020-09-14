@@ -20,7 +20,7 @@ class Item < ApplicationRecord
   # ジャンルの選択が「--」の時は保存できないようにする
   validates :delivery_area_id, numericality: { other_than: 1 }
 
-  belongs_to_active_hash :delivery_day
+  belongs_to_active_hash :delivery_days
 
   # ジャンルの選択が「--」の時は保存できないようにする
   validates :delivery_days_id, numericality: { other_than: 1 }
