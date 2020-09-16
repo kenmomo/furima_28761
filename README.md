@@ -78,7 +78,7 @@ Things you may want to cover:
 | postal_code     | string     | null: false                    |
 | prefecture_id   | integer    | null: false                    |
 | city_name       | string     | null: false                    |
-| address         | string     | null: false                    |
+| block_number    | string     | null: false                    |
 | buildding_name  | string     |                                |
 | phone_number    | string     | null: false                    |
 | information_id  | integer    | null: false, foreign_key: true |
