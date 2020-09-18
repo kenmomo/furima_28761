@@ -1,6 +1,6 @@
 class InformationsController < ApplicationController
   before_action :move_to_index, except: [:index, :create]
-  before_action :set_item, only: [:show, :index, :create]
+  before_action :set_item, only: [:index, :create]
   before_action :correct_user, only: [:create, :index]
   before_action :soldout_item, only: [:create, :index]
 
@@ -11,7 +11,6 @@ class InformationsController < ApplicationController
 
   def new
     @information = InformationAddress.new
-    @address = @information.addresses.new
   end
 
   def create
@@ -25,10 +24,7 @@ class InformationsController < ApplicationController
     end
   end
 
-  def show
-    @information = Information.new
-    @information = @item.information.includes(:user)
-  end
+
 
 
 

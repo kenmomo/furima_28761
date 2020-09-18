@@ -12,6 +12,10 @@ RSpec.describe InformationAddress, type: :model do
     it 'すべての値が正しく入力されていれば保存できること' do
       expect(@information_address).to be_valid
     end
+    it 'buildding_nameが空でも保存できること' do
+      @information_address.buildding_name = nil
+      expect(@information_address).to be_valid
+    end
     it 'postal_codeが空だと保存できないこと' do
       @information_address.postal_code = nil
       @information_address.valid?
@@ -51,6 +55,11 @@ RSpec.describe InformationAddress, type: :model do
       @information_address.phone_number = '00000000000000'
       @information_address.valid?
       expect(@information_address.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
+    end
+    it 'prefecture_idが0だと保存できないこと' do
+      @information_address.prefecture_id = 0
+      @information_address.valid?
+      expect(@information_address.errors.full_messages).to include("Prefecture must be other than 0")
     end
 
   end
