@@ -49,8 +49,7 @@ def pay_item
 end
 
 def correct_user
-  @correctuser_id = @item.user_id
-    if @correctuser_id == current_user.id
+    if @item.user_id == current_user.id
       redirect_to root_path
     end
 end
