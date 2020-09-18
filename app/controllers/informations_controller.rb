@@ -23,6 +23,7 @@ class InformationsController < ApplicationController
       render 'index'
     end
   end
+  
 
 
 
