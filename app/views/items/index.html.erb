@@ -128,14 +128,14 @@
 
       <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
       <% if @items.present? %>
-      <li class='list'>
       <% @items.each do |item| %>
+      <li class='list'>
         <%= link_to item_path(item.id) do %>
         <div class='item-img-content'>
           <%= image_tag item.image, class: "item-img" %>
 
           <%# 商品が売れていればsold outを表示しましょう %>
-          <% if @information.present? %>
+          <% if item.information.present? %>
           <div class='sold-out'>
             <span>Sold Out!!</span>
           </div>
