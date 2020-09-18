@@ -4,16 +4,14 @@ class InformationAddress
   attr_accessor :token, :item_id, :user_id, :postal_code, :prefecture_id, :city_name, :block_number, :buildding_name, :phone_number, :information_id
 
   with_options presence: true do
-    validates :postal_code
+    validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/}
     validates :city_name
     validates :block_number
-    validates :phone_number
+    validates :phone_number, length: { maximum: 11 }
+    validates :prefecture_id, numericality: { other_than: 0 }
+    validates :token
   end
 
-  validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/}
-  validates :phone_number, length: { maximum: 11 }
-  validates :prefecture_id, numericality: { other_than: 0 }
-  validates :token, presence: true
 
   def save
     # ユーザーの情報を保存し、「user」という変数に入れている
